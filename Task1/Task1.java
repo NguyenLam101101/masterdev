@@ -67,7 +67,7 @@ public class Task1{
         System.out.println(repeat(" ",r-x));
         int first = r-x;
         int last = r-x+2*x+1;
-        for(int i=0;i<r-x/2-1;i++){
+        for(int i=0;i<r-x;i++){
             System.out.print(repeat(" ",first));
             System.out.print(repeat("*",2));
             System.out.print(repeat(" ",last - first - 2));
@@ -77,13 +77,13 @@ public class Task1{
         }
         first += 1;
         last -= 1;
-        for(int i=0;i<r-x/2-1;i++){
+        for(int i=0;i<2*x-1;i++){
             System.out.print(repeat(" ",first));
             System.out.print("*");
             System.out.print(repeat(" ",last - first));
             System.out.println("*");
         }
-        for(int i=0;i<r-x/2-1;i++){
+        for(int i=0;i<r-x;i++){
             System.out.print(repeat(" ",first));
             System.out.print(repeat("*",2));
             System.out.print(repeat(" ",last - first - 2));
@@ -97,7 +97,7 @@ public class Task1{
     }
 
     public static void main(String[] args){
-        System.out.println(IsPrime(5));
+        Draw(20);
     }
 }
 
