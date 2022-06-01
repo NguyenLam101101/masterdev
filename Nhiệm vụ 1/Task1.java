@@ -83,7 +83,7 @@ public class Task1{
             System.out.print(repeat(" ",last - first));
             System.out.println("*");
         }
-        for(int i=0;i<r-(int)x/2-1;i++){
+        for(int i=0;i<r-x/2-1;i++){
             System.out.print(repeat(" ",first));
             System.out.print(repeat("*",2));
             System.out.print(repeat(" ",last - first - 2));
