@@ -1,10 +1,10 @@
-package com.example.demospring;
+package com.example.demokafka;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoSpringApplicationTests {
+class DemoKafkaApplicationTests {
 
     @Test
     void contextLoads() {
