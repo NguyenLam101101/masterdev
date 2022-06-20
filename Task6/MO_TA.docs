@@ -1,0 +1,5 @@
+1. Tải dữ liệu về tên, họ, tên đêm trên trang web: https://hoten.org/;
+2. User_name được tạo bằng cách: lấy 3 chữ cái đầu tiên của tên + 1 số random.
+3. Code sinh random các trường dữ liệu còn lại.
+4. Code jdbc insert dữ liệu vào database.
+6. Các yêu cầu được code dưới dạng các procerduce.
