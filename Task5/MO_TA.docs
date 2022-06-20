@@ -1,6 +1,6 @@
 1. Tải dữ liệu về tên trên trang web: https://www.back4app.com/database/back4app/list-of-names-dataset.
 2. Tải dữ liệu về các môn học từ file thời khóa biểu bủa trường.
-3. Code sinh random các trường dữ liệu còn lại
-4. Code sinh syntax để insert vào database
-5. Chạy câu lệnh insert 
+3. Code java sinh random các trường dữ liệu còn lại.
+4. Code java sinh syntax để insert vào database.
+5. Chạy câu lệnh insert.
 6. Các yêu cầu được code dưới dạng các procerduce.
