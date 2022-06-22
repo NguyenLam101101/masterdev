@@ -5,6 +5,7 @@ import com.example.demomongodb.Service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,7 +36,7 @@ public class BookController {
     }
 
     @GetMapping("/findByPublicationDate/{startDate}/{endDate}")
-    public List<Book> getByPublicationDate(@PathVariable String startDate, @PathVariable String endDate){
+    public List<Book> getByPublicationDate(@PathVariable Date startDate, @PathVariable Date endDate){
         return service.getBooksByPublicationDateBetween(startDate, endDate);
     }
 

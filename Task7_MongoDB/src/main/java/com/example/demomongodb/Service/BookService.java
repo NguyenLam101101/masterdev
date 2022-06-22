@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,7 +32,7 @@ public class BookService {
         return repository.findBooksByAuthorContainsAndBookNameContains(author, bookName);
     }
 
-    public List<Book> getBooksByPublicationDateBetween(String startDate, String endDate){
+    public List<Book> getBooksByPublicationDateBetween(Date startDate, Date endDate){
         return repository.findBooksByPublicationDateBetween(startDate, endDate);
     }
 
