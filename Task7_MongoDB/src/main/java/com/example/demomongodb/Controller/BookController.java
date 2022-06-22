@@ -19,14 +19,19 @@ public class BookController {
         return service.getBookById(id);
     }
 
-    @GetMapping("/findBookByBookName/{bookName}")
-    public Book getBookByBookName(@PathVariable String bookName){
-        return service.getBookByBookNameContains(bookName);
+    @GetMapping("/findByBookName/{bookName}")
+    public List<Book> getBookByBookName(@PathVariable String bookName){
+        return service.getBookByBookName(bookName);
     }
 
-    @GetMapping("/findBookByAuthor/{author}")
-    public Book getBookByAuthor(@PathVariable String author){
-        return service.getBookByAuthorContains(author);
+    @GetMapping("/findByAuthor/{author}")
+    public List<Book> getBookByAuthor(@PathVariable String author){
+        return service.getBookByAuthor(author);
+    }
+
+    @GetMapping("/findByAuthorAndBookName/{author}/{bookName}")
+    public List<Book> getBookByAuthorAndBookName(@PathVariable String author, @PathVariable String bookName){
+        return service.getBookByAuthorAndBookName(author, bookName);
     }
 
     @GetMapping("/findBooks")
@@ -40,7 +45,7 @@ public class BookController {
         return "Insert %s successfully".formatted(book);
     }
 
-    @DeleteMapping("/deleteBookById/{id}")
+    @DeleteMapping("/deleteById/{id}")
     public String deleteBookById(@PathVariable String id){
         service.deleteBookById(id);
         return "Delete id_book: %s successfully".formatted(id);

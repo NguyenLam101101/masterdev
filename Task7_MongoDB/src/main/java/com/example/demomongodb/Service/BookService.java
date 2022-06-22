@@ -19,12 +19,16 @@ public class BookService {
         return repository.findById(id);
     }
 
-    public Book getBookByBookNameContains(String bookName){
-        return repository.findBookByBookNameContains(bookName);
+    public List<Book> getBookByBookName(String bookName){
+        return repository.findBooksByBookNameContains(bookName);
     }
 
-    public Book getBookByAuthorContains(String author){
-        return repository.findBookByAuthorContains(author);
+    public List<Book> getBookByAuthor(String author){
+        return repository.findBooksByAuthorContains(author);
+    }
+
+    public List<Book> getBookByAuthorAndBookName(String author, String bookName){
+        return repository.findBookByAuthorContainsAndBookNameContains(author, bookName);
     }
 
     public List<Book> getBooks(){
