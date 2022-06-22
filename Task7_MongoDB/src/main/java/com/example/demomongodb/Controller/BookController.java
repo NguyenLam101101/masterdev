@@ -3,6 +3,7 @@ package com.example.demomongodb.Controller;
 import com.example.demomongodb.Library.Book;
 import com.example.demomongodb.Service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -36,7 +37,7 @@ public class BookController {
     }
 
     @GetMapping("/findByPublicationDate")
-    public List<Book> getByPublicationDate(@RequestParam Date startDate, @RequestParam Date endDate){
+    public List<Book> getByPublicationDate(@RequestParam @DateTimeFormat(pattern="yyyy-MM-dd") Date startDate, @RequestParam @DateTimeFormat(pattern="yyyy-MM-dd") Date endDate){
         return service.getBooksByPublicationDateBetween(startDate, endDate);
     }
 
