@@ -31,7 +31,12 @@ public class BookController {
 
     @GetMapping("/findByAuthorAndBookName/{author}/{bookName}")
     public List<Book> getBookByAuthorAndBookName(@PathVariable String author, @PathVariable String bookName){
-        return service.getBookByAuthorAndBookName(author, bookName);
+        return service.getBooksByAuthorAndBookName(author, bookName);
+    }
+
+    @GetMapping("/findByPublicationDate/{startDate}/{endDate}")
+    public List<Book> getByPublicationDate(@PathVariable String startDate, @PathVariable String endDate){
+        return service.getBooksByPublicationDateBetween(startDate, endDate);
     }
 
     @GetMapping("/findBooks")

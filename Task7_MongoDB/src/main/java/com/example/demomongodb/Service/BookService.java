@@ -27,8 +27,12 @@ public class BookService {
         return repository.findBooksByAuthorContains(author);
     }
 
-    public List<Book> getBookByAuthorAndBookName(String author, String bookName){
-        return repository.findBookByAuthorContainsAndBookNameContains(author, bookName);
+    public List<Book> getBooksByAuthorAndBookName(String author, String bookName){
+        return repository.findBooksByAuthorContainsAndBookNameContains(author, bookName);
+    }
+
+    public List<Book> getBooksByPublicationDateBetween(String startDate, String endDate){
+        return repository.findBooksByPublicationDateBetween(startDate, endDate);
     }
 
     public List<Book> getBooks(){

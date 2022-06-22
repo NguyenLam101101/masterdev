@@ -9,5 +9,6 @@ import java.util.Optional;
 public interface BookRepository extends MongoRepository<Book, Object>{
     List<Book> findBooksByAuthorContains(String author);
     List<Book> findBooksByBookNameContains(String bookName);
-    List<Book> findBookByAuthorContainsAndBookNameContains(String author, String bookName);
+    List<Book> findBooksByAuthorContainsAndBookNameContains(String author, String bookName);
+    List<Book> findBooksByPublicationDateBetween(String startDate, String endDate);
 }
