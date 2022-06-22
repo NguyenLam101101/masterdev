@@ -35,8 +35,8 @@ public class BookController {
         return service.getBooksByAuthorAndBookName(author, bookName);
     }
 
-    @GetMapping("/findByPublicationDate/{startDate}/{endDate}")
-    public List<Book> getByPublicationDate(@PathVariable Date startDate, @PathVariable Date endDate){
+    @GetMapping("/findByPublicationDate")
+    public List<Book> getByPublicationDate(@RequestParam Date startDate, @RequestParam Date endDate){
         return service.getBooksByPublicationDateBetween(startDate, endDate);
     }
 
