@@ -8,8 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface BookRepository extends MongoRepository<Book, Object>{
-    List<Book> findBooksByAuthorContains(String author);
-    List<Book> findBooksByBookNameContains(String bookName);
-    List<Book> findBooksByAuthorContainsAndBookNameContains(String author, String bookName);
     List<Book> findBooksByPublicationDateBetween(Date startDate, Date endDate);
+    @Query(value = "db.book.find({$text: {$search: \"?1\"}})")
+    List<Book> findFullText(String text);
 }

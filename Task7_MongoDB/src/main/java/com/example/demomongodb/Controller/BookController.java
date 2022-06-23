@@ -21,19 +21,9 @@ public class BookController {
         return service.getBookById(id);
     }
 
-    @GetMapping("/findByBookName/{bookName}")
-    public List<Book> getBookByBookName(@PathVariable String bookName){
-        return service.getBookByBookName(bookName);
-    }
-
-    @GetMapping("/findByAuthor/{author}")
-    public List<Book> getBookByAuthor(@PathVariable String author){
-        return service.getBookByAuthor(author);
-    }
-
-    @GetMapping("/findByAuthorAndBookName/{author}/{bookName}")
-    public List<Book> getBookByAuthorAndBookName(@PathVariable String author, @PathVariable String bookName){
-        return service.getBooksByAuthorAndBookName(author, bookName);
+    @GetMapping("/findByText/{text}")
+    public List<Book> getByText(@PathVariable String text){
+        return service.getBookByText(text);
     }
 
     @GetMapping("/findByPublicationDate")

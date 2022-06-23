@@ -20,16 +20,8 @@ public class BookService {
         return repository.findById(id);
     }
 
-    public List<Book> getBookByBookName(String bookName){
-        return repository.findBooksByBookNameContains(bookName);
-    }
-
-    public List<Book> getBookByAuthor(String author){
-        return repository.findBooksByAuthorContains(author);
-    }
-
-    public List<Book> getBooksByAuthorAndBookName(String author, String bookName){
-        return repository.findBooksByAuthorContainsAndBookNameContains(author, bookName);
+    public List<Book> getBookByText(String text){
+        return repository.findFullText(text);
     }
 
     public List<Book> getBooksByPublicationDateBetween(Date startDate, Date endDate){
