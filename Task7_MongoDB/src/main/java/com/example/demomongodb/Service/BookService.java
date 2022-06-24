@@ -3,6 +3,9 @@ package com.example.demomongodb.Service;
 import com.example.demomongodb.Library.Book;
 import com.example.demomongodb.Repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -28,8 +31,9 @@ public class BookService {
         return repository.findBooksByPublicationDateBetween(startDate, endDate);
     }
 
-    public List<Book> getBooks(){
-        return repository.findAll();
+    public Page<Book> getBooks(int page){
+        Sort sort = Sort.by("publicationDate").descending();
+        return repository.findAll(PageRequest.of(page, 20, sort));
     }
 
     public void setBook(Book book){

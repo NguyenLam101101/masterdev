@@ -3,6 +3,7 @@ package com.example.demomongodb.Controller;
 import com.example.demomongodb.Library.Book;
 import com.example.demomongodb.Service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,12 +32,12 @@ public class BookController {
         return service.getBooksByPublicationDateBetween(startDate, endDate);
     }
 
-    @GetMapping("/findBooks")
-    public List<Book> getBooks(){
-        return service.getBooks();
+    @GetMapping("/findAll")
+    public Page<Book> getBooks(@RequestParam int page){
+        return service.getBooks(page);
     }
 
-    @PostMapping("/setBook")
+    @PostMapping("/set")
     public String setBook(@RequestBody Book book){
         service.setBook(book);
         return "Insert %s successfully".formatted(book);
@@ -48,13 +49,13 @@ public class BookController {
         return "Delete id_book: %s successfully".formatted(id);
     }
 
-    @DeleteMapping("/deleteBook")
+    @DeleteMapping("/delete")
     public String deleteBook(@RequestBody Book book){
         service.deleteBook(book);
         return "Delete %s successfully".formatted(book);
     }
 
-    @PutMapping("/updateBook/{id}")
+    @PutMapping("/update/{id}")
     public String updateBook(@PathVariable String id, @RequestBody Book new_book){
         service.updateBook(id, new_book);
         return "Update successfully";
