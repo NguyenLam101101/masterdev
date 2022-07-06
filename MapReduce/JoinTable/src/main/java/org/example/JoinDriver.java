@@ -10,7 +10,7 @@ import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 import org.example.Record.JoinGenericWritable;
 
-public class peopeoJoinDriver extends Configured implements Tool {
+public class JoinDriver extends Configured implements Tool {
     public static int peopleHead = 0;
     public static int salaryHead = 0;
 
