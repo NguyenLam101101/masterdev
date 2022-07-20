@@ -1,0 +1,12 @@
+syntax = "proto2";
+package com.example.demoSparkKafka;
+option java_outer_classname = "DataTrackingClass";
+
+message DataTracking {
+  required string version = 1;
+  required string name = 2;
+  required fixed64 timestamp = 3;
+  optional string phone_id = 4;
+  optional fixed64 lon = 5;
+  optional fixed64 lat = 6;
+}
