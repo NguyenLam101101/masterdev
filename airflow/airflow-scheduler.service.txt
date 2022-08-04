@@ -1,0 +1,13 @@
+[Unit]                                                                                                         
+Description=Airflow scheduler daemon                                                                           
+#After=network.target postgresql-9.6.service                                                                   
+#Wants=postgresql-9.6.service                                                                                  
+[Service]                                                                                                      
+RuntimeDirectory=airflow                                                                                       
+RuntimeDirectoryMode=0775                                                                                      
+Type=simple                                                                                                    
+ExecStart=/usr/local/bin/airflow scheduler                                                                     
+Restart=always                                                                                                 
+RestartSec=5s                                                                                                  
+[Install]                                                                                                      
+WantedBy=multi-user.target
