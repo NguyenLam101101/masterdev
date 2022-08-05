@@ -1,2 +1,3 @@
 user: lamnv155
 pass: 1
+Server: 172.17.80.28
